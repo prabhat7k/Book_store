@@ -1,0 +1,35 @@
+body{
+  font-size: .8rem;
+}
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    input {
+      width: 60vw;
+      padding: .2rem 1rem;
+      border: 1px solid gray;
+      border-radius: .6rem;
+    }
+
+    textarea {
+      width: 60vw;
+      padding: .8rem;
+      border: 1px solid gray;
+      border-radius: 1rem;
+    }
+
+    button {
+      border: none;
+      padding: 10px;
+      background-color: white;
+      background-color: teal;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+

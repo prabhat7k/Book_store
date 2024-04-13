@@ -1,0 +1,38 @@
+*{
+    font-size: 1rem;
+}
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+.nav-btn{
+    margin: 0 1rem;
+    border-radius: .2rem;
+    border: 2px solid var(--success);
+    background-color: var(--success);
+    color: var(--light);
+    cursor: pointer;
+}
+
+.nav-btn:disabled{    
+    background-color: transparent;
+    color: gray;
+    cursor: not-allowed;
+}
+
+.nav-btn:hover{
+    background-color: #115f23;
+}
+
+.nav-btn:disabled:hover{
+    background-color: transparent;
+}
