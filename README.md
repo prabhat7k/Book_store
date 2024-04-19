@@ -26,9 +26,9 @@
 `CREATE TABLE books (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
-    description TEXT,
+    `desc` TEXT,
     cover VARCHAR(255),
-    price DECIMAL(10, 2) NOT NULL
+    price INT NOT NULL
 );`
 
 
