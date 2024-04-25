@@ -1,0 +1,31 @@
+version: '3'
+services:
+  backend:
+    build: ./backend
+    command: bash -c "sleep 10 && node index.js"
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+    
+  frontend:
+    build: ./client
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-vol:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1212
+      MYSQL_DATABASE: library
+    container_name: mysql-db
+
+volumes:
+  db-vol:
+      
