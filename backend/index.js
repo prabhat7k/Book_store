@@ -16,30 +16,6 @@ const db = mysql.createPool({
 	database: "library",
 });
 
-// Listen for the 'acquire' event
-pool.on("acquire", (connection) => {
-	console.log("Connection %d acquired", connection.threadId);
-
-	// Check if the connection is connected
-	console.log(
-		"Is connected:",
-		connection._socket && connection._socket.readable && connection._socket.writable
-	);
-});
-
-// Test the pool by acquiring a connection
-pool.getConnection((err, connection) => {
-	if (err) {
-		console.error("Error acquiring connection:", err);
-		return;
-	}
-
-	console.log("Connection %d was acquired successfully", connection.threadId);
-
-	// Release the connection back to the pool when done
-	connection.release();
-});
-
 db.query(
 	`CREATE TABLE IF NOT EXISTS library.books(id INT AUTO_INCREMENT PRIMARY KEY,title VARCHAR(255) NOT NULL,\`desc\` TEXT NOT NULL,price INT NOT NULL,cover VARCHAR(255))`,
 	(err, results) => {
